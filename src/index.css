@@ -1,0 +1,10 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active{
+    text-decoration: underline;
+    color: green;
+    font-weight: 800;
+}
