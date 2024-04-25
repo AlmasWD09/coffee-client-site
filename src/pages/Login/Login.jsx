@@ -23,6 +23,7 @@ const handleLogin = (e) =>{
     .then(res=>{
         console.log(res.user);
         navigate(location?.state? location.state : '/about')
+       
     })
     .catch(error=>{
         console.log(error.message);

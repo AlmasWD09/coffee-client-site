@@ -14,7 +14,7 @@ const AddCoffeeFrom = () => {
         const photo = form.photo.value;
         const addCoffee = {name,quantity,support,teast,category,details,photo}
         
-        fetch('http://localhost:5000/coffees',{
+        fetch('https://coffee-server-site-ruby.vercel.app/coffees',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

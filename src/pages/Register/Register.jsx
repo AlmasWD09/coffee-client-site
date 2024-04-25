@@ -38,6 +38,22 @@ const {creatUser,updateUser} = useContext(AuthContext)
             .then(res => {
                 console.log(res.user);
                 alert('creatUser Successfully');
+
+
+
+                const userEmail = {email};
+                fetch('https://coffee-server-site-ruby.vercel.app/users',{
+                    method:'POST',
+                    headers:{
+                        'content-type' : 'application/json'
+                    },
+                    body:JSON.stringify(userEmail)
+                })
+                .then(res=>res.json())
+                .then(data=>{
+                    console.log(data);
+                })
+
                 e.target.reset()
                 updateUser(name, photo)
                 .then(res => {

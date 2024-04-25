@@ -10,6 +10,7 @@ import UpdateCoffee from "../pages/UpdateCoffee/UpdateCoffee";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivatRoute from "../firebase/PrivatRoute/PrivatRoute";
+import Users from "../pages/Users/Users";
 
   const router = createBrowserRouter([
     {
@@ -19,7 +20,7 @@ import PrivatRoute from "../firebase/PrivatRoute/PrivatRoute";
         {
           path: "/",
           element: <Home />,
-          loader: () => fetch('http://localhost:5000/coffees'),
+          loader: () => fetch('https://coffee-server-site-ruby.vercel.app/coffees'),
         },
         {
           path:'/about',
@@ -36,9 +37,13 @@ import PrivatRoute from "../firebase/PrivatRoute/PrivatRoute";
           </PrivatRoute>,
         },
         {
+          path:'/users',
+          element:<Users />,
+        },
+        {
           path:'/updateCoffee/:id',
           element:<UpdateCoffee />,
-          loader:({params}) =>fetch(`http://localhost:5000/coffees/${params.id}`)
+          loader:({params}) =>fetch(`https://coffee-server-site-ruby.vercel.app/coffees/${params.id}`)
         },
         
       ],
